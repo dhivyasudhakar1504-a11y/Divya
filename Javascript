@@ -1,0 +1,16 @@
+// Fade-in animation on scroll
+const faders = document.querySelectorAll('.fade-in');
+
+window.addEventListener('scroll', () => {
+  const triggerBottom = window.innerHeight * 0.85;
+
+  faders.forEach(fade => {
+    const boxTop = fade.getBoundingClientRect().top;
+
+    if (boxTop < triggerBottom) {
+      fade.classList.add('visible');
+    } else {
+      fade.classList.remove('visible');
+    }
+  });
+});
